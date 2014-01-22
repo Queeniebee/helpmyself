@@ -3,8 +3,13 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
+<<<<<<< HEAD
 standard-app-packages
 autopublish
 insecure
 preserve-inputs
 instagram-wrapper
+=======
+preserve-inputs
+standard-app-packages
+>>>>>>> 96f4c224f8e1ae401ba93dbb810f674eb07968d3
