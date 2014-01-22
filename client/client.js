@@ -1,5 +1,6 @@
 /*
- * GOTO: A Meteor based, collections-centric experiment in geolocation and watching people arrive.
+ *
+ * Forked from Olizilla's  GOTO: A Meteor based, collections-centric experiment in geolocation and watching people arrive.
  */
 
 var map;

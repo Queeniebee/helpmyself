@@ -1,6 +1,9 @@
 [goto.meteor.com](http://goto.meteor.com)
 =================
 
+Based on Olizilla's [GOTO](http://goto.meteor.com).
+
+
 GOTO: A Meteor based, collections-centric experiment in geolocation and watching people arrive.
 
 For the [Meteor London](http://www.meetup.com/Meteor-London/) gang...
