@@ -1,11 +1,11 @@
 /*
- *
- * Forked from Olizilla's  GOTO: A Meteor based, collections-centric experiment in geolocation and watching people arrive.
+ * GOTO: A Meteor based, collections-centric experiment in geolocation and watching people arrive.
  */
 
 var map;
 var clusterGroup;
-
+var INSTAID = '6a3498750e784e69afc341c60eaf4f7e';
+var ACCESSTOKEN = "";
 /*
  * Meteor.startup "will run as soon as the DOM is ready and any <body> templates from your .html files have been put on the screen."
  * http://docs.meteor.com/#meteor_startup
@@ -59,53 +59,62 @@ Meteor.startup(function () {
 	});
 });
 
+// ------ Instagram stuff -----------------------------------------------------
+Deps.autorun(function(){
+  if(Meteor.user()){
+    Meteor.call("getAccessToken", function(error, accessToken){
+       ACCESSTOKEN = accessToken;
+    })
+  }
+})
+
 // ---- Templates -------------------------------------------------------------
 
 // Try and get a gravatar Url
-Template.gravatar.url = function(){
-	var player = Players.findOne(Session.get('playerId'));
-	
-	// console.log('Template gravatar.url called', player);
-	
-	if (!player || !player.emailHash){
-		return false;// don't return null, always return a default or you get errors.
-	}
-
-	return gravatarUrl(player.emailHash);
-};
-
-// Hash the email and store the result
-Template.gravatar.events({
-
-	'click .save' : function(event, template){
-		var email = template.find('.email').value;
-		updatePlayerEmail(email);
-	},
-
-	'click .icon': function(event, template){
-		user = getCurrentUser();
-		marker = findMarker(user._id);
-		map.setView(marker.getLatLng(),16);
-
-		// console.log('Updating geolocation');
-		// let the user force a new geolocation position request... possibly a bad idea...
-		// map.locate({setView:true});
-	},
-
-	'click .edit': function(event, template){
-		Players.update(Session.get('playerId'), { $set: { emailHash: null }});
-		// console.log('Deleted players emailHash');
-	},	
-
-	'keypress #email': function(event, template){
-		if(event.which == 13) {
-			// console.log(event);
-			event.preventDefault();
-            var email = template.find('.email').value;
-			updatePlayerEmail(email);
-        }
-	}
-});
+// Template.gravatar.url = function(){
+	// var player = Players.findOne(Session.get('playerId'));
+// 	
+	// // console.log('Template gravatar.url called', player);
+// 	
+	// if (!player || !player.emailHash){
+		// return false;// don't return null, always return a default or you get errors.
+	// }
+// 
+	// return gravatarUrl(player.emailHash);
+// };
+// 
+// // Hash the email and store the result
+// Template.gravatar.events({
+// 
+	// 'click .save' : function(event, template){
+		// var email = template.find('.email').value;
+		// updatePlayerEmail(email);
+	// },
+// 
+	// 'click .icon': function(event, template){
+		// user = getCurrentUser();
+		// marker = findMarker(user._id);
+		// map.setView(marker.getLatLng(),16);
+// 
+		// // console.log('Updating geolocation');
+		// // let the user force a new geolocation position request... possibly a bad idea...
+		// // map.locate({setView:true});
+	// },
+// 
+	// 'click .edit': function(event, template){
+		// Players.update(Session.get('playerId'), { $set: { emailHash: null }});
+		// // console.log('Deleted players emailHash');
+	// },	
+// 
+	// 'keypress #email': function(event, template){
+		// if(event.which == 13) {
+			// // console.log(event);
+			// event.preventDefault();
+            // var email = template.find('.email').value;
+			// updatePlayerEmail(email);
+        // }
+	// }
+// });
 
 // ---- Helpers ---------------------------------------------------------------
 

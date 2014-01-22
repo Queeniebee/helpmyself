@@ -19,6 +19,7 @@
 		<div class="navbar-inner">
 			<a class="about brand" title="About GOTO" href="#about" data-toggle="modal">GOTO</a>
 			{{> gravatar }}
+			{{> instagram }}
 		</div>
 	</nav>
 	<div id="map"></div>
@@ -29,23 +30,22 @@
 			<h3 id="myModalLabel">About GOTO</h3>
 		</div>
 		<div class="modal-body">
-			<p>GOTO is <strong>a live map showing where you and everyone else is</strong>. Use it to figure out a mutually convenient spot to host a meet-up or just watch to see if your friends are on the way.
+			<p>GOTO is <strong>a live map showing where you and everyone else is</strong>.
 			</p>
 			<p><strong>Accept the geolocation request and you'll get a pin on the map.</strong> If you're using a mobile with GPS, then your position will update as you move. Don't worry, it's opt-in. Your browser will only update your positon while you're looking at the page.
 			</p>
-			<p>If you've got a <a href="http://en.gravatar.com/">gravatar</a>, then add your email address and you'll get a better pin. <strong>You're email isn't shared or stored, so go for it.</strong>
+			<p>If you have an <a href="http://instagram.com/">Instagram account</a>, log-in and you'll get a better pin. <strong>You're account info isn't shared or stored.</strong>
 			</p>
-		</div>
 		<div class="modal-footer">
-			<p><a href="https://github.com/olizilla/goto-meteor">Built</a> on <a href="http://meteor.com/">Meteor</a> by <a href="https://twitter.com/olizilla">@olizilla</a> for <a href="http://www.meetup.com/Meteor-London/events/103404762/">Meteor London</a>, Feb 2013.
+			<p><a href="https://github.com/olizilla/goto-meteor">Built</a> on <a href="http://meteor.com/">Meteor</a> Thanks to <a href="https://twitter.com/olizilla">@olizilla</a>. Visit <a href="http://github.com/Queeniebee/helpmyself">Jo as Queeniebee</a>
 		</div>
 	</div>
 </body>
 
-<template name="gravatar">
+<!-- <template name="gravatar">
 	{{#if url}}
 	<img class="gravatar icon" src="{{url}}" title="Center map on your current location" />
-	<a href="#" title="Change your gravatar" class="btn btn-link edit">Edit...</a>
+	<a href="#" title="Change your picture" class="btn btn-link edit">Edit...</a>
 	{{else}}
 
 	<form class="navbar-form">
@@ -54,4 +54,7 @@
 		<a href="#" class="btn btn-primary save">Go</a>
 	</form>
 	{{/if}}
+</template> -->
+<template name="instagram">
+
 </template>

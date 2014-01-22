@@ -34,7 +34,7 @@ html, body, #map {
 .navbar:hover .edit{
 	opacity: 0.9;
 }
-.navbar .gravatar,
+.navbar .instagram,
 .navbar .no-gravatar
 {
 	height:40px;
