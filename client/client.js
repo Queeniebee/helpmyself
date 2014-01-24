@@ -4,7 +4,7 @@
 
 var map;
 var clusterGroup;
-var INSTAID = '6a3498750e784e69afc341c60eaf4f7e';
+var INSTAID = '';
 var ACCESSTOKEN = "";
 /*
  * Meteor.startup "will run as soon as the DOM is ready and any <body> templates from your .html files have been put on the screen."
